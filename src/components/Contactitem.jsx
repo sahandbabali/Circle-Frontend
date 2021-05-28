@@ -24,11 +24,11 @@ const Contactitem = ({ contact }) => {
           )}
         </ul>
 
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">
+        <div className="btn-group" role="group" aria-label="Basic example">
+          <button type="button" className="btn btn-primary">
             Edit
           </button>
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" className="btn btn-outline-secondary">
             Delete
           </button>
         </div>

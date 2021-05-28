@@ -6,3 +6,12 @@
 .contactcard {
       margin: 1rem 0;
 }
+
+.contactform {
+      margin: 1rem 0;
+}
+
+
+body {
+      background-color: lightgray;
+}

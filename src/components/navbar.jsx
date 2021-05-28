@@ -6,7 +6,7 @@ function navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <i class="bi bi-record-circle"></i> Circle
+            <i className="bi bi-record-circle"></i> Circle
           </Link>
           <button
             className="navbar-toggler"
