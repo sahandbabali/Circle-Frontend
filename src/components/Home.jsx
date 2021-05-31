@@ -2,6 +2,7 @@ import React from "react";
 import Contacts from "./Contacts";
 
 import Form from "./Contactform";
+import Contactfilter from "./contactfilter";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       </div>
 
       <div className="col-md-6">
+        <Contactfilter />
         <Contacts />
       </div>
     </div>
