@@ -6,6 +6,7 @@ const Contactitem = ({ contact }) => {
 
   const onDelete = () => {
     contactcontext.deleteContact(contact.id);
+    contactcontext.clearcurrentcontact();
   };
 
   return (
@@ -32,7 +33,13 @@ const Contactitem = ({ contact }) => {
         </ul>
 
         <div className="btn-group" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-primary">
+          <button
+            onClick={() => {
+              contactcontext.setcurrentcontact(contact);
+            }}
+            type="button"
+            className="btn btn-primary"
+          >
             Edit
           </button>
           <button
