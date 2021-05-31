@@ -1,7 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../context/contact/ContactContext";
 
 const Contactform = () => {
+  const contactcontext = useContext(ContactContext);
+
+  useEffect(() => {
+    if (contactcontext.currentContact !== null) {
+      setContact(contactcontext.currentContact);
+    } else {
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+        type: "personal",
+      });
+    }
+  }, [contactcontext, contactcontext.currentContact]);
+
   const [contact, setContact] = useState({
     name: "",
     email: "",
@@ -9,7 +24,9 @@ const Contactform = () => {
     type: "personal",
   });
 
-  const contactcontext = useContext(ContactContext);
+  const clearAll = () => {
+    contactcontext.clearcurrentcontact();
+  };
 
   const onChange = (e) => {
     console.log("changed");
@@ -19,13 +36,12 @@ const Contactform = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    contactcontext.addContact(contact);
-    setContact({
-      name: "",
-      email: "",
-      phone: "",
-      type: "personal",
-    });
+    if (contactcontext.currentContact === null) {
+      contactcontext.addContact(contact);
+    } else {
+      contactcontext.updateContact(contact);
+    }
+    contactcontext.clearcurrentcontact();
   };
 
   return (
@@ -94,9 +110,21 @@ const Contactform = () => {
               Profesional
             </label>
           </div>
-          <button type="submit" class="btn btn-primary">
-            Create contact
+          <button type="submit" className="btn btn-primary">
+            {contactcontext.currentContact
+              ? "Update contact"
+              : "Create contact"}
           </button>
+
+          {contactcontext.currentContact && (
+            <button
+              onClick={clearAll}
+              type="button"
+              className="btn btn-warning"
+            >
+              Clear
+            </button>
+          )}
         </form>
       </div>
     </div>
