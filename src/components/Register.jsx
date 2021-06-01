@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AlertContext from "../context/alert/AlertContext";
 
 const Register = () => {
+  const alertcontext = useContext(AlertContext);
+
   const [user, setuser] = useState({
     name: "",
     email: "",
@@ -14,6 +17,14 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (
+      user.name === "" ||
+      user.email === "" ||
+      user.password === "" ||
+      user.password2 === ""
+    ) {
+      alertcontext.setalert("Please enter all fields", "warning");
+    }
   };
   return (
     <div className="container">
@@ -60,6 +71,7 @@ const Register = () => {
             class="form-control"
             id="password1"
             name="password"
+            minLength="6"
           />
         </div>
 
@@ -74,6 +86,7 @@ const Register = () => {
             class="form-control"
             id="password2"
             name="password2"
+            minLength="6"
           />
         </div>
 
