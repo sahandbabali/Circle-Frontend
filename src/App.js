@@ -6,21 +6,24 @@ import Home from "./components/Home";
 import About from "./components/About";
 
 import ContactState from "./context/contact/ContactState";
+import AuthState from "./context/auth/AuthState";
 
 const App = () => {
   return (
-    <ContactState>
-      <Router>
-        <div className=" container App">
-          <Navbar />
+    <AuthState>
+      <ContactState>
+        <Router>
+          <div className=" container App">
+            <Navbar />
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-          </Switch>
-        </div>
-      </Router>
-    </ContactState>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+            </Switch>
+          </div>
+        </Router>
+      </ContactState>
+    </AuthState>
   );
 };
 
