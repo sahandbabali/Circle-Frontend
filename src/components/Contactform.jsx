@@ -93,9 +93,9 @@ const Contactform = () => {
               type="radio"
               name="type"
               id="flexRadioDefault1"
-              checked
+              defaultChecked
             />
-            <label className="form-check-label" for="flexRadioDefault1">
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
               Personal
             </label>
           </div>
@@ -106,7 +106,7 @@ const Contactform = () => {
               name="type"
               id="flexRadioDefault2"
             />
-            <label className="form-check-label" for="flexRadioDefault2">
+            <label className="form-check-label" htmlFor="flexRadioDefault2">
               Profesional
             </label>
           </div>

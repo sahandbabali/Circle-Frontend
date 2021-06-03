@@ -25,7 +25,7 @@ const Contactfilter = () => {
         <input
           ref={text}
           type="text"
-          class="form-control"
+          className="form-control"
           onChange={onChange}
           id="contactfilter"
           aria-describedby="filter"

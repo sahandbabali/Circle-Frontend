@@ -17,7 +17,7 @@ function Navbar() {
         Hello {user && user.name}
       </Link>
       <Link onClick={onlogout} className="nav-link" to="#">
-        <i class="bi bi-box-arrow-left"></i> Logout
+        <i className="bi bi-box-arrow-left"></i> Logout
       </Link>
     </Fragment>
   );
@@ -25,10 +25,10 @@ function Navbar() {
   const guestlinksmenu = (
     <Fragment>
       <Link className="nav-link" to="/login">
-        <i class="bi bi-box-arrow-in-right"></i> Login
+        <i className="bi bi-box-arrow-in-right"></i> Login
       </Link>
       <Link className="nav-link" to="/register">
-        <i class="bi bi-person-check-fill"></i> Register
+        <i className="bi bi-person-check-fill"></i> Register
       </Link>
     </Fragment>
   );
