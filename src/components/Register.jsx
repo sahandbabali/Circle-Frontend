@@ -2,16 +2,20 @@ import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../context/alert/AlertContext";
 import AuthContext from "../context/auth/AuthContext";
 
-const Register = () => {
+const Register = (props) => {
   const alertcontext = useContext(AlertContext);
   const authcontext = useContext(AuthContext);
 
   useEffect(() => {
+    if (authcontext.isAuthenticated) {
+      props.history.push("./");
+    }
+
     if (authcontext.error) {
       alertcontext.setalert(authcontext.error, "danger");
       authcontext.clearerrors();
     }
-  }, [authcontext.error]);
+  }, [authcontext.error, authcontext.isAuthenticated, props.history]);
   const [user, setuser] = useState({
     name: "",
     email: "",
