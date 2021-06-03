@@ -8,6 +8,8 @@ export const UPDATE_CONTACT = "UPDATE_CONTACT";
 export const FILTER_CONTACTS = "FILTER_CONTACTS";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const CONTACT_ERROR = "CONTACT_ERROR";
+export const GET_CONTACTS = "GET_CONTACTS";
+export const CLEAR_CONTACTS = "CLEAR_CONTACTS";
 
 //alert related types
 export const SET_ALERT = "SET_ALERT";
